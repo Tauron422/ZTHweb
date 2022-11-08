@@ -4,7 +4,7 @@ const Config = {
     defaultServer: 'https://europe.signum.network',
     SmartContractId: 10252065254978029504n,
     SmartContractRS: "",
-    authorisedCodeHash: 738377637144987047n,
+    authorisedCodeHash: 7113358627428169487n,
     assetId: "9518219425200752102",
     serverAlternatives: [
         "https://brazil.signum.network",
