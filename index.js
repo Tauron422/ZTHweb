@@ -2,10 +2,10 @@
 
 const Config = {
     defaultServer: 'https://signawallet.notallmine.net',
-    SmartContractId: 10252065254978029504n,
+    SmartContractId: 18339269626061634110n,
     SmartContractRS: "",
-    authorisedCodeHash: 7113358627428169487n,
-    assetId: "9518219425200752102",
+    authorisedCodeHash: 5817622329198284865n,
+    assetId: "11955007191311588286",
     serverAlternatives: [
         "https://brazil.signum.network",
         "https://uk.signum.network",
@@ -13,13 +13,12 @@ const Config = {
         "https://europe.signum.network",
         "https://australia.signum.network",
         "https://signawallet.notallmine.net"
-
     ],
     MinerContractArgs: {
         feePlanck: '10000000',
         activationAmountPlanck: '50000000',
-        description: "Grand Pool contract for mining ZTH",
-        name: "ZTHminer",
+        description: "TMG miner contract for The Mining Game",
+        name: "TMGminer",
         referencedTransactionHash: "f0c36f552dec58799a21eb30004c9bdd35512f04977cc1a74f06030992a1499f",
         data: [
             '0', '0', '0', '1', '100000000', '0', '18339269626061634110', '32000000',
