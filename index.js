@@ -6,6 +6,7 @@ const Config = {
     SmartContractRS: "ZStoreVGB",
     authorisedCodeHash: 13623170965212595266n,
     assetId: "9518219425200752102", 
+    assetId_2: "10833977877748360862",
     serverAlternatives: [
         "https://brazil.signum.network",
         "https://uk.signum.network",
@@ -336,6 +337,18 @@ function getTMGFromUser(UserAccount) {
     return 0
 }
 
+function getTMGFromUser_2(UserAccount) {
+    if (UserAccount === undefined || UserAccount.assetBalances === undefined) {
+        return 0
+    }
+    for (let i = 0; i< UserAccount.assetBalances.length; i++) {
+        if (UserAccount.assetBalances[i].asset === Config.assetId_2) {
+            return Number(UserAccount.assetBalances[i].balanceQNT)
+        }
+    }
+    return 0
+}
+
 async function updatePlayerDetailsAndContract() {
     const currentUser = localStorage.getItem('userId')
     if (currentUser === null) {
@@ -353,6 +366,9 @@ async function updatePlayerDetailsAndContract() {
     document.getElementById('player_name').innerText = UserAccount?.name ?? ''
     let tmgAssetQuantity = getTMGFromUser(UserAccount)
     document.getElementById('player_tmg_quantity').innerText = tmgAssetQuantity
+
+    let tmgAssetQuantity_2 = getTMGFromUser_2(UserAccount)
+    document.getElementById('my_balance').innerText = tmgAssetQuantity_2
 
     let UserContract
     try {
