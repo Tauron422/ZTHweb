@@ -2,9 +2,9 @@
 
 const Config = {
     defaultServer: 'https://europe.signum.network',
-    SmartContractId: 6850542208867610071n,
+    SmartContractId: 10252065254978029504n,
     SmartContractRS: "",
-    authorisedCodeHash: 1967467256179933783n,
+    authorisedCodeHash: 7113358627428169487n,
     assetId: "9518219425200752102",
     serverAlternatives: [
         "https://brazil.signum.network",
@@ -16,9 +16,9 @@ const Config = {
     ],
     MinerContractArgs: {
         feePlanck: '20000000',
-        activationAmountPlanck: '50000000',
-        description: "TMG miner contract for The Mining Game",
-        name: "TMGminer",
+        activationAmountPlanck: '15000000000',
+        description: "Miner contract for mining ZTH",
+        name: "GrandPoolZTH",
         referencedTransactionHash: "E6455035238217841D8392A2D0C160FE0765473D4E3ED1B85D099466D55D8B43",
         data: [
             '0', '0', '0', '1', '200000000', '0', '	738377637144987047', '25020000000',
