@@ -4,7 +4,7 @@ const Config = {
     defaultServer: 'https://signawallet.notallmine.net',
     SmartContractId: 12693294013502983242n,
     SmartContractRS: "",
-    authorisedCodeHash: 5817622329198284865n,
+    authorisedCodeHash: 13623170965212595266n,
     assetId: "9518219425200752102",
     serverAlternatives: [
         "https://brazil.signum.network",
