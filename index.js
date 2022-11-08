@@ -17,9 +17,9 @@ const Config = {
       MinerContractArgs: {
         feePlanck: '10000000',
         activationAmountPlanck: '50000000',
-        description: "TMG miner contract for The Mining Game",
-        name: "TMGminer",
-        referencedTransactionHash: "f0c36f552dec58799a21eb30004c9bdd35512f04977cc1a74f06030992a1499f",
+        description: "This smart contract was created for the test of the token mining system. Check how it works. Just send 10 SIGNA.",
+        name: "GrandPoolStoreV1",
+        referencedTransactionHash: "33ecf30ed6836fc49a4916f0931b39a5def27ee94b8e23f963bad18e70aa248c",
         data: [
             '0', '0', '0', '1', '100000000', '0', '18339269626061634110', '32000000',
             '8', '10', '15', '16', '32', '46', '48', '57',
