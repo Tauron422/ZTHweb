@@ -17,7 +17,7 @@ const Config = {
     MinerContractArgs: {
         feePlanck: '10000000',
         activationAmountPlanck: '50000000',
-        description: "TMG miner contract for The Mining Game",
+        description: "Miner contract for mining ZTH",
         name: "TMGminer",
         referencedTransactionHash: "f0c36f552dec58799a21eb30004c9bdd35512f04977cc1a74f06030992a1499f",
         data: [
