@@ -6,7 +6,7 @@ const Config = {
     SmartContractRS: "ZStoreVGB",
     authorisedCodeHash: 13623170965212595266n,
     assetId: "9518219425200752102", 
-    assetId_2: "10833977877748360862",
+    assetId_2: "9381200141252723234",
     serverAlternatives: [
         "https://brazil.signum.network",
         "https://uk.signum.network",
