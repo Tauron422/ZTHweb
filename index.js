@@ -2,7 +2,7 @@
 
 const Config = {
     defaultServer: 'https://signawallet.notallmine.net',
-    SmartContractId: 18339269626061634110n,
+    SmartContractId: 12693294013502983242n,
     SmartContractRS: "",
     authorisedCodeHash: 5817622329198284865n,
     assetId: "9518219425200752102",
