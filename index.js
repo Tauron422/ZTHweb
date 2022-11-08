@@ -1,6 +1,20 @@
 "use strict";
 
- window.addEventListener('wallet-event', (event) => {
+const Config = {
+    defaultServer: 'https://signawallet.notallmine.net',
+    SmartContractId: 18339269626061634110n,
+    SmartContractRS: "",
+    authorisedCodeHash: 5817622329198284865n,
+    assetId: "11955007191311588286",
+    serverAlternatives: [
+        "https://brazil.signum.network",
+        "https://uk.signum.network",
+        "https://cryptodefrag.com:8125",
+        "https://europe.signum.network",
+        "https://australia.signum.network",
+        "https://signawallet.notallmine.net"
+    ],
+window.addEventListener('wallet-event', (event) => {
     const {payload, action} = event.detail
 
     if (action === 'connected') {
