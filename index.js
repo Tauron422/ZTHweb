@@ -113,39 +113,6 @@ window.onload = function () {
     }    
 }
 
- window.addEventListener('wallet-event', (event) => {
-    const {payload, action} = event.detail
-
-    if (action === 'connected') {
-      document.querySelector('#account-connection span').innerText = payload.address
-      const avatar = document.querySelector('#account-connection img')
-      avatar.src = window.hashicon(payload.accountId, 64).toDataURL()
-      document.getElementById('successful-connection').classList.remove("is-hidden")
-      document.getElementById('network').innerText = payload.host;
-    }
-
-    if (action === 'disconnected') {
-      document.getElementById('successful-connection').classList.add("is-hidden")
-      document.getElementById('connect-button-text').innerText = 'Connect Wallet'
-      document.querySelector('#connect-button-icon span').classList.remove('is-hidden');
-      const avatar = document.querySelector('#connect-button-icon img')
-      avatar.src = ""
-      avatar.classList.add('is-hidden');
-    }
-
-    if (action === 'accountChanged') {
-      document.querySelector('#account-connection span').innerText = payload.address
-      const avatar = document.querySelector('#account-connection img')
-      avatar.src = window.hashicon(payload.accountId, 64).toDataURL()
-    }
-
-    if (action === 'networkChanged') {
-      document.getElementById('network').innerText = payload.nodeHost;
-    }
-
-  })
-}
-
 function evtNewNode() {
     let newNode = document.getElementById("ipt_new_node").value
     if (!newNode.startsWith('http')) {
