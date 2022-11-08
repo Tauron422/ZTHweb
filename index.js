@@ -71,46 +71,37 @@ const Global = {
     UserContract: undefined
 }
 
-window.onload = function () {
-    let preferedNode = localStorage.getItem("preferedNode");
-    if (preferedNode === null) {
-        Global.server = Config.defaultServer;
-    } else {
-        Global.server = preferedNode;
+ window.addEventListener('wallet-event', (event) => {
+    const {payload, action} = event.detail
+
+    if (action === 'connected') {
+      document.querySelector('#account-connection span').innerText = payload.address
+      const avatar = document.querySelector('#account-connection img')
+      avatar.src = window.hashicon(payload.accountId, 64).toDataURL()
+      document.getElementById('successful-connection').classList.remove("is-hidden")
+      document.getElementById('network').innerText = payload.host;
     }
-    
-    // document.getElementById("show_current_node").innerText = Global.server;
-    // document.getElementById("node_list").innerHTML = Config.serverAlternatives.join("<br>");
 
-    Config.SmartContractRS = idTOaccount(Config.SmartContractId);
-    requestData();
+    if (action === 'disconnected') {
+      document.getElementById('successful-connection').classList.add("is-hidden")
+      document.getElementById('connect-button-text').innerText = 'Connect Wallet'
+      document.querySelector('#connect-button-icon span').classList.remove('is-hidden');
+      const avatar = document.querySelector('#connect-button-icon img')
+      avatar.src = ""
+      avatar.classList.add('is-hidden');
+    }
 
-    document.getElementById("btn_link_account").addEventListener('click',evtLinkAccount);
-    document.getElementById("btn_unlink_account").addEventListener('click',evtUnlinkAccount);
-    document.getElementById("btn_deploy_miner").addEventListener('click',evtDeployMiner);
-    document.getElementById("btn_link_with_xt").addEventListener('click',evtLinkWithXT);
-    document.getElementById("btn_add_balance").addEventListener('click',evtAddBalance);
-    document.getElementById("btn_change_intensity").addEventListener('click',evtChangeIntensity);
-    document.getElementById("btn_stop").addEventListener('click',evtStop);
-    document.getElementById("btn_new_node").addEventListener('click',evtNewNode);
-    
+    if (action === 'accountChanged') {
+      document.querySelector('#account-connection span').innerText = payload.address
+      const avatar = document.querySelector('#account-connection img')
+      avatar.src = window.hashicon(payload.accountId, 64).toDataURL()
+    }
 
-    const spans = document.getElementsByName("scid");
-    spans.forEach( dom => {
-        dom.innerText = Config.SmartContractRS;
-    })
+    if (action === 'networkChanged') {
+      document.getElementById('network').innerText = payload.nodeHost;
+    }
 
-    document.getElementById("nodes_list").innerHTML = Config.serverAlternatives.join('<br>')
-
-    // Update user detail
-    if (localStorage.getItem('userHasXT') === 'true') {
-        //try to link using XT silently
-        activateWalletXT(true).then((resp) => {
-            updateLinkedAccount()
-        });
-    } else {
-        updateLinkedAccount()
-    }    
+  })
 }
 
 function evtNewNode() {
