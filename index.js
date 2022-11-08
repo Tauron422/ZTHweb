@@ -351,7 +351,7 @@ async function updatePlayerDetailsAndContract() {
         UserAccount = undefined
     }
     document.getElementById('player_name').innerText = UserAccount?.name ?? ''
-    let tmgAssetQuantity = getVGBFromUser(UserAccount)
+    let tmgAssetQuantity = getTMGFromUser(UserAccount)
     document.getElementById('player_tmg_quantity').innerText = tmgAssetQuantity
 
     let UserContract
