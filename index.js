@@ -28,10 +28,6 @@ const Config = {
     }
 }
 
-const {runTokenSeller} = require("./commands/tokenseller");
-const {runZthDistributor} = require("./commands/zthdistributor");
-const {runZthPayer} = require("./commands/zthpayer");
-
 const Picker = {
     tokenId: 0n,
     currentTX: {
