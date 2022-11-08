@@ -1,0 +1,16 @@
+{
+  "name": "tmg",
+  "version": "1.0.0",
+  "description": "The Mining Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx light-server -s . -p 7003 --no-reload"
+  },
+  "author": "",
+  "private": "true",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "light-server": "^2.9.1"
+  }
+}
