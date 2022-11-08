@@ -46,7 +46,20 @@
         </div>
     </div>
     
-
+ <div class="box" name="linked">
+        <h2>My miner</h2>
+        <div id="contract_found" style="display: none;">
+        Smart Contract: <output id="my_contract_rs">?</output><br>
+        Balance: <output id="my_contract_balance">?</output> Signa<br>
+        Current mining intensity: <output id="my_contract_intensity">?</output> Signa<br>
+        Good for: <output id="my_contract_remaining">?</output><br>
+        Actions: <button id="btn_add_balance">Add</button> <button id="btn_change_intensity">Change intensity</button> <button id="btn_stop">Stop</button> 
+        </div>
+        <div id="contract_not_found" style="display: none;">
+            No miner found... <button id="btn_deploy_miner">Deploy now</button>
+        </div>
+    </div>
+    
 
     <div id="my_account" class="h_spacer">&nbsp;</div>
     <div class="box">
