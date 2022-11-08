@@ -19,7 +19,7 @@ const Config = {
         activationAmountPlanck: '50000000',
         description: "Miner contract for mining ZTH",
         name: "TMGminer",
-        referencedTransactionHash: "f0c36f552dec58799a21eb30004c9bdd35512f04977cc1a74f06030992a1499f",
+        referencedTransactionHash: "fullHash",
         data: [
             '0', '0', '0', '1', '100000000', '0', '18339269626061634110', '32000000',
             '8', '10', '15', '16', '32', '46', '48', '57',
