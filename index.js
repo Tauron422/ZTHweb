@@ -14,6 +14,19 @@ const Config = {
         "https://australia.signum.network",
         "https://signawallet.notallmine.net"
     ],
+      MinerContractArgs: {
+        feePlanck: '10000000',
+        activationAmountPlanck: '50000000',
+        description: "TMG miner contract for The Mining Game",
+        name: "TMGminer",
+        referencedTransactionHash: "f0c36f552dec58799a21eb30004c9bdd35512f04977cc1a74f06030992a1499f",
+        data: [
+            '0', '0', '0', '1', '100000000', '0', '18339269626061634110', '32000000',
+            '8', '10', '15', '16', '32', '46', '48', '57',
+            '255', '100000000', '0', '0', '0', '22'
+        ]
+    }
+}
 window.addEventListener('wallet-event', (event) => {
     const {payload, action} = event.detail
 
