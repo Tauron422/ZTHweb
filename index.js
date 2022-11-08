@@ -1,31 +1,36 @@
 "use strict";
 
-const Config = {
-    defaultServer: 'https://signawallet.notallmine.net',
-    SmartContractId: 18339269626061634110n,
-    SmartContractRS: "",
-    authorisedCodeHash: 5817622329198284865n,
-    assetId: "9518219425200752102",
-    serverAlternatives: [
-        "https://brazil.signum.network",
-        "https://uk.signum.network",
-        "https://cryptodefrag.com:8125",
-        "https://europe.signum.network",
-        "https://australia.signum.network",
-        "https://signawallet.notallmine.net"
-    ],
-    MinerContractArgs: {
-        feePlanck: '10000000',
-        activationAmountPlanck: '50000000',
-        description: "TMG miner contract for The Mining Game",
-        name: "TMGminer",
-        referencedTransactionHash: "f0c36f552dec58799a21eb30004c9bdd35512f04977cc1a74f06030992a1499f",
-        data: [
-            '0', '0', '0', '1', '100000000', '0', '18339269626061634110', '32000000',
-            '8', '10', '15', '16', '32', '46', '48', '57',
-            '255', '100000000', '0', '0', '0', '22'
-        ]
+ window.addEventListener('wallet-event', (event) => {
+    const {payload, action} = event.detail
+
+    if (action === 'connected') {
+      document.querySelector('#account-connection span').innerText = payload.address
+      const avatar = document.querySelector('#account-connection img')
+      avatar.src = window.hashicon(payload.accountId, 64).toDataURL()
+      document.getElementById('successful-connection').classList.remove("is-hidden")
+      document.getElementById('network').innerText = payload.host;
     }
+
+    if (action === 'disconnected') {
+      document.getElementById('successful-connection').classList.add("is-hidden")
+      document.getElementById('connect-button-text').innerText = 'Connect Wallet'
+      document.querySelector('#connect-button-icon span').classList.remove('is-hidden');
+      const avatar = document.querySelector('#connect-button-icon img')
+      avatar.src = ""
+      avatar.classList.add('is-hidden');
+    }
+
+    if (action === 'accountChanged') {
+      document.querySelector('#account-connection span').innerText = payload.address
+      const avatar = document.querySelector('#account-connection img')
+      avatar.src = window.hashicon(payload.accountId, 64).toDataURL()
+    }
+
+    if (action === 'networkChanged') {
+      document.getElementById('network').innerText = payload.nodeHost;
+    }
+
+  })
 }
 
 const Picker = {
