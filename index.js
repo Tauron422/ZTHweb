@@ -364,6 +364,7 @@ async function updatePlayerDetailsAndContract() {
         UserContract = undefined
     }
     
+    
     if (UserContract?.ats.length > 0) {
         document.getElementById('contract_found').style.display = 'block'
         document.getElementById('contract_not_found').style.display = 'none'
