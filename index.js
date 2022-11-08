@@ -2,10 +2,10 @@
 
 const Config = {
     defaultServer: 'https://signawallet.notallmine.net',
-    SmartContractId: 12693294013502983242n,
+    SmartContractId: 14154677109245865011n,
     SmartContractRS: "",
     authorisedCodeHash: 13623170965212595266n,
-    assetId: "9518219425200752102",
+    assetId: "11078457913435910552",
     serverAlternatives: [
         "https://brazil.signum.network",
         "https://uk.signum.network",
@@ -15,13 +15,13 @@ const Config = {
         "https://signawallet.notallmine.net"
     ],
       MinerContractArgs: {
-        feePlanck: '10000000',
-        activationAmountPlanck: '50000000',
-        description: "This smart contract was created for the test of the token mining system. Check how it works. Just send 10 SIGNA.",
-        name: "GrandPoolStoreV1",
+        feePlanck: '20000000',
+        activationAmountPlanck: '25000000000',
+        description: "This smart contract was created for the test of the token mining system. Check how it works. Just send 250 SIGNA.",
+        name: "TonSeller",
         referencedTransactionHash: "33ecf30ed6836fc49a4916f0931b39a5def27ee94b8e23f963bad18e70aa248c",
         data: [
-            '0', '0', '0', '1', '100000000', '0', '18339269626061634110', '32000000',
+            '0', '0', '0', '1', '100000000', '0', '2346890478463582646', '32000000',
             '8', '10', '15', '16', '32', '46', '48', '57',
             '255', '100000000', '0', '0', '0', '22'
         ]
