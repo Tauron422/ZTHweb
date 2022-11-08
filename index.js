@@ -5,7 +5,7 @@ const Config = {
     SmartContractId: 12693294013502983242n,
     SmartContractRS: "",
     authorisedCodeHash: 13623170965212595266n,
-    assetId: "11955007191311588286",
+    assetId: "9518219425200752102",
     serverAlternatives: [
         "https://brazil.signum.network",
         "https://uk.signum.network",
