@@ -264,7 +264,7 @@ async function activateWalletXT(silent) {
         })
         Global.walletSubscription = Global.walletResponse.listen({
             onAccountChanged: (newVal) => {
-                localStorage.setItem('userId', idTOaccount(BigInt(newVal.accountId)));
+                localStorage.setItem('userRS', idTOaccount(BigInt(newVal.accountId)));
                 localStorage.setItem('userId', newVal.accountId);
                 localStorage.setItem('userHasXT', 'true');
                 Global.walletResponse.publicKey = newVal.accountPublicKey;
