@@ -261,7 +261,7 @@ async function activateWalletXT(silent) {
         Global.walletResponse = await Global.wallet.connect({
             appName: "ZTH Mining",
             networkName: "Signum"
-        })
+       })
         Global.walletSubscription = Global.walletResponse.listen({
             onAccountChanged: (newVal) => {
                 localStorage.setItem('userRS', idTOaccount(BigInt(newVal.accountId)));
@@ -296,7 +296,7 @@ async function evtLinkWithXT () {
 }
 
 function evtLinkAccount() {
-    let userId = document.getElementById('rsToLink').value.trim();
+    let userRS = document.getElementById('rsToLink').value.trim();
     let idExec = /^(BURST-|S-|TS-)([0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{5})/.exec(userRS)
     if (idExec === null) {
         alert("Error decoding RS-Address...");
@@ -331,7 +331,7 @@ function getTMGFromUser(UserAccount) {
     }
     for (let i = 0; i< UserAccount.assetBalances.length; i++) {
         if (UserAccount.assetBalances[i].asset === Config.assetId) {
-            return Number(UserAccount.assetBalances[i].balanceQNT)/10
+            return Number(UserAccount.assetBalances[i].balanceQNT)/100
         }
     }
     return 0
