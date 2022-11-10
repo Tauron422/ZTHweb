@@ -314,7 +314,7 @@ function evtLinkAccount() {
 }
 
 function evtUnlinkAccount() {
-    localStorage.removeItem('userId');
+    localStorage.removeItem('userRS');
     localStorage.removeItem('userId');
     localStorage.removeItem('userHasXT');
     Global.walletSubscription?.unlisten();
