@@ -14,7 +14,12 @@ const Config = {
         "https://australia.signum.network",
         "https://signawallet.notallmine.net"
     ],
-
+    MinerContractArgs: {
+        feePlanck: '20000000',
+        activationAmountPlanck: '25000000000',
+        description: "Miner contract for mining ZTH",
+        name: "GrandPoolZTH",
+        referencedTransactionHash: "",
 
     }
 }
