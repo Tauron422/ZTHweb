@@ -272,7 +272,7 @@ async function activateWalletXT(silent) {
                 updatePlayerDetailsAndContract();
             }
         })
-        localStorage.setItem('userId', idTOaccount(BigInt(Global.walletResponse.accountId)));
+        localStorage.setItem('userRS', idTOaccount(BigInt(Global.walletResponse.accountId)));
         localStorage.setItem('userId', Global.walletResponse.accountId);
         localStorage.setItem('userHasXT', 'true');
     } catch (err) {
