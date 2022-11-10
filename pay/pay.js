@@ -66,6 +66,88 @@ const Global = {
     UserContract: undefined
 }
 
+window.onload = function () {
+    let preferedNode = localStorage.getItem("preferedNode");
+    if (preferedNode === null) {
+        Global.server = Config.defaultServer;
+    } else {
+        Global.server = preferedNode;
+    }
+    
+    // document.getElementById("show_current_node").innerText = Global.server;
+    // document.getElementById("node_list").innerHTML = Config.serverAlternatives.join("<br>");
+
+    Config.SmartContractRS = idTOaccount(Config.SmartContractId);
+    requestData();
+
+    document.getElementById("btn_link_account").addEventListener('click',evtLinkAccount);
+    document.getElementById("btn_unlink_account").addEventListener('click',evtUnlinkAccount);
+    document.getElementById("btn_deploy_miner").addEventListener('click',evtDeployMiner);
+    document.getElementById("btn_link_with_xt").addEventListener('click',evtLinkWithXT);
+    document.getElementById("btn_add_balance").addEventListener('click',evtAddBalance);
+    document.getElementById("btn_change_intensity").addEventListener('click',evtChangeIntensity);
+    document.getElementById("btn_stop").addEventListener('click',evtStop);
+    document.getElementById("btn_new_node").addEventListener('click',evtNewNode);
+    
+    const spans = document.getElementsByName("scid");
+    spans.forEach( dom => {
+        dom.innerText = Config.SmartContractRS;
+    })
+
+    document.getElementById("nodes_list").innerHTML = Config.serverAlternatives.join('<br>')
+
+    // Update user detail
+    if (localStorage.getItem('userHasXT') === 'true') {
+        //try to link using XT silently
+        activateWalletXT(true).then((resp) => {
+            updateLinkedAccount()
+        });
+    } else {
+        updateLinkedAccount()
+    }    
+}
+
+function evtNewNode() {
+    let newNode = document.getElementById("ipt_new_node").value
+    if (!newNode.startsWith('http')) {
+        newNode = 'https://' + newNode
+    }
+    localStorage.setItem("preferedNode", newNode)
+    location.reload()
+}
+
+async function evtAddBalance() {
+    if (Global.walletResponse === null || Global.walletResponse === undefined) {
+        alert("'Add balance' is avaliable only using Signum XT Wallet.")
+        return
+    }
+    const strBalance = prompt("Введите сумму в SIGNA из рассчтета 1 виртуальный VGB = 250 SIGNA")
+    let numberBalance = Number(strBalance)
+    if (isNaN(numberBalance)) {
+        numberBalance = Number(strBalance.replace(',','.'))
+    }
+    if (isNaN(numberBalance) || numberBalance < 0.5) {
+        return
+    }
+    if (!confirm(`Вы отправляете ${numberBalance} Signa на контракт ${Global.UserContract.atRS}.`)) {
+        return
+    }
+
+    try {
+        const amountPlanck = ((numberBalance) * 1E8).toFixed(0);
+        const UnsignedBytes = await Global.signumJSAPI.transaction.sendAmountToSingleRecipient({
+            amountPlanck,
+            senderPublicKey: Global.walletResponse.publicKey,
+            recipientId: Global.UserContract.atRS,
+            feePlanck: "2000000"
+        })
+        const ConfirmResponse = await Global.wallet.confirm(UnsignedBytes.unsignedTransactionBytes)
+        alert(`Transaction broadcasted! Id: ${ConfirmResponse.transactionId}. Balance will be added in 8 minutes.`);
+    } catch (err) {
+        alert(`Transaction failed.\n\n${err.message}`);
+    }
+}
+
 window.addEventListener('wallet-event', (event) => {
     const {payload, action} = event.detail
 
