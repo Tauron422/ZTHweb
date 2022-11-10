@@ -20,7 +20,6 @@ const Config = {
         description: "Miner contract for mining ZTH",
         name: "GrandPoolZTH",
         referencedTransactionHash: "",
-
     }
 }
 
