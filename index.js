@@ -329,7 +329,7 @@ function getTMGFromUser(UserAccount) {
     }
     return 0
 }
-
+ 
 function getTMGFromUser_2(UserAccount) {
     if (UserAccount === undefined || UserAccount.assetBalances === undefined) {
         return 0
