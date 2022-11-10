@@ -23,7 +23,41 @@ const Config = {
     }
 }
 
+const Picker = 
+    
+    // document.getElementById("show_current_node").innerText = Global.server;
+    // document.getElementById("node_list").innerHTML = Config.serverAlternatives.join("<br>");
 
+    Config.SmartContractRS = idTOaccount(Config.SmartContractId);
+    requestData();
+
+    document.getElementById("btn_link_account").addEventListener('click',evtLinkAccount);
+    document.getElementById("btn_unlink_account").addEventListener('click',evtUnlinkAccount);
+    document.getElementById("btn_deploy_miner").addEventListener('click',evtDeployMiner);
+    document.getElementById("btn_link_with_xt").addEventListener('click',evtLinkWithXT);
+    document.getElementById("btn_add_balance").addEventListener('click',evtAddBalance);
+    document.getElementById("btn_change_intensity").addEventListener('click',evtChangeIntensity);
+    document.getElementById("btn_stop").addEventListener('click',evtStop);
+    document.getElementById("btn_new_node").addEventListener('click',evtNewNode);
+    
+
+    const spans = document.getElementsByName("scid");
+    spans.forEach( dom => {
+        dom.innerText = Config.SmartContractRS;
+    })
+
+    document.getElementById("nodes_list").innerHTML = Config.serverAlternatives.join('<br>')
+
+    // Update user detail
+    if (localStorage.getItem('userHasXT') === 'true') {
+        //try to link using XT silently
+        activateWalletXT(true).then((resp) => {
+            updateLinkedAccount()
+        });
+    } else {
+        updateLinkedAccount()
+    }    
+}
 
 function evtNewNode() {
     let newNode = document.getElementById("ipt_new_node").value
