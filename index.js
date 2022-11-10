@@ -290,7 +290,7 @@ async function activateWalletXT(silent) {
 }
 
 async function evtLinkWithXT () {
-    await activateWalletXT(true);
+    await activateWalletXT(false);
     updateLinkedAccount();
     updatePlayerDetailsAndContract();
 }
