@@ -89,7 +89,6 @@ window.onload = function () {
     document.getElementById("btn_stop").addEventListener('click',evtStop);
     document.getElementById("btn_new_node").addEventListener('click',evtNewNode);
     
-
     const spans = document.getElementsByName("scid");
     spans.forEach( dom => {
         dom.innerText = Config.SmartContractRS;
@@ -139,7 +138,7 @@ async function evtAddBalance() {
         const UnsignedBytes = await Global.signumJSAPI.transaction.sendAmountToSingleRecipient({
             amountPlanck,
             senderPublicKey: Global.walletResponse.publicKey,
-            recipientId: Global.UserContract.at,
+            recipientId: Global.UserContract.atRS,
             feePlanck: "2000000"
         })
         const ConfirmResponse = await Global.wallet.confirm(UnsignedBytes.unsignedTransactionBytes)
