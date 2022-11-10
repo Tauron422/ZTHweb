@@ -259,7 +259,7 @@ async function activateWalletXT(silent) {
     Global.wallet = new sig$wallets.GenericExtensionWallet();
     try {
         Global.walletResponse = await Global.wallet.connect({
-            appName: "The Mining Game",
+            appName: "ZTH Mining",
             networkName: "Signum"
         })
         Global.walletSubscription = Global.walletResponse.listen({
