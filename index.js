@@ -142,7 +142,7 @@ async function evtAddBalance() {
             feePlanck: "2000000"
         })
         const ConfirmResponse = await Global.wallet.confirm(UnsignedBytes.unsignedTransactionBytes)
-        alert(`Transaction broadcasted! Id: ${ConfirmResponse.transactionId}. Balance will be added in 8 minutes.`);
+        alert(`Transaction broadcasted! Id: ${ConfirmResponse.transactionIdRS}. Balance will be added in 8 minutes.`);
     } catch (err) {
         alert(`Transaction failed.\n\n${err.message}`);
     }
