@@ -190,7 +190,7 @@ async function evtChangeIntensity() {
             attachment,
             senderPublicKey: Global.walletResponse.publicKey,
             recipientId: Global.UserContract.at,
-            feePlanck: "1000000"
+            feePlanck: "2000000"
         })
         const ConfirmResponse = await Global.wallet.confirm(UnsignedBytes.unsignedTransactionBytes)
         alert(`Transaction broadcasted! Id: ${ConfirmResponse.transactionId}. Transaction will be processed between 8 minutes and 1 hour.`);
@@ -219,7 +219,7 @@ async function evtStop() {
             attachment,
             senderPublicKey: Global.walletResponse.publicKey,
             recipientId: Global.UserContract.at,
-            feePlanck: "1000000"
+            feePlanck: "2000000"
         })
         const ConfirmResponse = await Global.wallet.confirm(UnsignedBytes.unsignedTransactionBytes)
         alert(`Transaction broadcasted! Id: ${ConfirmResponse.transactionId}. Refund can take up to one hour.`);
@@ -252,7 +252,7 @@ async function activateWalletXT(silent) {
     Global.wallet = new sig$wallets.GenericExtensionWallet();
     try {
         Global.walletResponse = await Global.wallet.connect({
-            appName: "ZTH Mining",
+            appName: "ZStoreVGB",
             networkName: "Signum"
        })
         Global.walletSubscription = Global.walletResponse.listen({
