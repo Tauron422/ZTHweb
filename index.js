@@ -21,11 +21,7 @@ const Config = {
         description: "Miner contract for mining ZTH",
         name: "GrandPoolZTH",
         referencedTransactionHash: "E6455035238217841D8392A2D0C160FE0765473D4E3ED1B85D099466D55D8B43",
-        data: [
-            '0', '0', '0', '1', '200000000', '0', '	738377637144987047', '25020000000',
-            '8', '10', '15', '16', '32', '46', '48', '57',
-            '255', '100000000', '0', '0', '0', '22'
-        ]
+
     }
 }
 
