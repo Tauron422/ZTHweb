@@ -17,8 +17,8 @@ const Config = {
     MinerContractArgs: {
         feePlanck: '20000000',
         activationAmountPlanck: '25000000000',
-        description: "Miner contract for mining ZTH",
-        name: "GrandPoolZTH",
+        description: "This A1 smart contract issues and sells a VGB token. This is a virtual HDD token for mining Zethereum #ZTH",
+        name: "ZStoreVGB",
         referencedTransactionHash: "TokenSellerContractContext.ReferenceHash.Mainnet",
     }
 }
