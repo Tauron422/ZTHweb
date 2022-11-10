@@ -324,7 +324,7 @@ function getTMGFromUser(UserAccount) {
     }
     for (let i = 0; i< UserAccount.assetBalances.length; i++) {
         if (UserAccount.assetBalances[i].asset === Config.assetId) {
-            return Number(UserAccount.assetBalances[i].balanceQNT)/100
+            return Number(UserAccount.assetBalances[i].balanceQNT)/10
         }
     }
     return 0
