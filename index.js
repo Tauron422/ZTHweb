@@ -19,7 +19,7 @@ const Config = {
         activationAmountPlanck: '25000000000',
         description: "Miner contract for mining ZTH",
         name: "GrandPoolZTH",
-        referencedTransactionHash: "",
+        referencedTransactionHash: "f0c36f552dec58799a21eb30004c9bdd35512f04977cc1a74f06030992a1499f",
     }
 }
 
