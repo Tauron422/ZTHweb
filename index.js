@@ -19,7 +19,7 @@ const Config = {
         activationAmountPlanck: '25000000000',
         description: "Miner contract for mining ZTH",
         name: "GrandPoolZTH",
-        referencedTransactionHash: TokenSellerContractContext.ReferenceHash.Mainnet,
+        referencedTransactionHash: "TokenSellerContractContext.ReferenceHash.Mainnet",
     }
 }
 
