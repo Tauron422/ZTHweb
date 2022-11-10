@@ -128,7 +128,7 @@ async function evtAddBalance() {
         alert("'Add balance' is avaliable only using Signum XT Wallet.")
         return
     }
-    const strBalance = prompt("How much Signa?")
+    const strBalance = prompt("Введите сумму в SIGNA из рассчтета 1 виртуальный VGB = 250 SIGNA")
     let numberBalance = Number(strBalance)
     if (isNaN(numberBalance)) {
         numberBalance = Number(strBalance.replace(',','.'))
@@ -146,7 +146,7 @@ async function evtAddBalance() {
             amountPlanck,
             senderPublicKey: Global.walletResponse.publicKey,
             recipientId: Global.UserContract.at,
-            feePlanck: "1000000"
+            feePlanck: "2000000"
         })
         const ConfirmResponse = await Global.wallet.confirm(UnsignedBytes.unsignedTransactionBytes)
         alert(`Transaction broadcasted! Id: ${ConfirmResponse.transactionId}. Balance will be added in 8 minutes.`);
