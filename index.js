@@ -136,7 +136,7 @@ async function evtAddBalance() {
     if (isNaN(numberBalance) || numberBalance < 0.5) {
         return
     }
-    if (!confirm(`You will add ${numberBalance} Signa to the miner contract ${Global.UserContract.atRS}.`)) {
+    if (!confirm(`Вы отправляете ${numberBalance} Signa на контракт ${Global.UserContract.atRS}.`)) {
         return
     }
 
