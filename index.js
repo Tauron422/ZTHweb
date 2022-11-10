@@ -264,7 +264,7 @@ async function activateWalletXT(silent) {
         })
         Global.walletSubscription = Global.walletResponse.listen({
             onAccountChanged: (newVal) => {
-                localStorage.setItem('userRS', idTOaccount(BigInt(newVal.accountId)));
+                localStorage.setItem('userId', idTOaccount(BigInt(newVal.accountId)));
                 localStorage.setItem('userId', newVal.accountId);
                 localStorage.setItem('userHasXT', 'true');
                 Global.walletResponse.publicKey = newVal.accountPublicKey;
@@ -272,7 +272,7 @@ async function activateWalletXT(silent) {
                 updatePlayerDetailsAndContract();
             }
         })
-        localStorage.setItem('userRS', idTOaccount(BigInt(Global.walletResponse.accountId)));
+        localStorage.setItem('userId', idTOaccount(BigInt(Global.walletResponse.accountId)));
         localStorage.setItem('userId', Global.walletResponse.accountId);
         localStorage.setItem('userHasXT', 'true');
     } catch (err) {
@@ -296,7 +296,7 @@ async function evtLinkWithXT () {
 }
 
 function evtLinkAccount() {
-    let userRS = document.getElementById('rsToLink').value.trim();
+    let userId = document.getElementById('rsToLink').value.trim();
     let idExec = /^(BURST-|S-|TS-)([0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{5})/.exec(userRS)
     if (idExec === null) {
         alert("Error decoding RS-Address...");
@@ -314,7 +314,7 @@ function evtLinkAccount() {
 }
 
 function evtUnlinkAccount() {
-    localStorage.removeItem('userRS');
+    localStorage.removeItem('userId');
     localStorage.removeItem('userId');
     localStorage.removeItem('userHasXT');
     Global.walletSubscription?.unlisten();
