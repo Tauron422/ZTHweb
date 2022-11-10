@@ -3,7 +3,6 @@
 const Config = {
     defaultServer: 'https://europe.signum.network',
     SmartContractId: 738377637144987047n,
-
     authorisedCodeHash: 13623170965212595266n,
     assetId: "9518219425200752102", 
     assetId_2: "9381200141252723234",
@@ -15,12 +14,7 @@ const Config = {
         "https://australia.signum.network",
         "https://signawallet.notallmine.net"
     ],
-    MinerContractArgs: {
-        feePlanck: '20000000',
-        activationAmountPlanck: '25000000000',
-        description: "Miner contract for mining ZTH",
-        name: "GrandPoolZTH",
-        referencedTransactionHash: "E6455035238217841D8392A2D0C160FE0765473D4E3ED1B85D099466D55D8B43",
+
 
     }
 }
