@@ -47,23 +47,6 @@ hr {
     margin: 0;
 }
 
-/*Grid for page (mobile) */
-@media (max-width: 1460px) {
-    .header_hide {
-        display: none;
-    }
-
-    .main {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: "account     "
-                             "options     "
-                             "frime       "
-                             "more        "
-                             "additionally";
-    }
-}
-
 .main {
     display: grid;
     grid-template-columns: 1fr;
@@ -73,6 +56,24 @@ hr {
                          "more           ";
     gap: 2ch;
     padding: 2ch;
+}
+
+/*Grid for page (mobile) */
+@media (max-width: 1460px) {
+/*     .header_hide {
+        display: none;
+    } */
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "account     "
+                             "options     "
+                             "frime       "
+                             "more        "
+                             "additionally";
+        gap: 10ch;
+    }
 }
 
 .more {
