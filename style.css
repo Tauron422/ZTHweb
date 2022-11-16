@@ -48,7 +48,7 @@ hr {
 }
 
 /*Grid for page (mobile) */
-@media (max-width: 460px) {
+@media (max-width: 1460px) {
     .header_hide {
         display: none;
     }
