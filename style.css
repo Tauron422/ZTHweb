@@ -48,7 +48,7 @@ hr {
 }
 
 /*Grid for page (mobile) */
-@media only screen and (max-width: 460px) {
+@media (max-width: 460px) {
     .header_hide {
         display: none;
     }
@@ -61,6 +61,7 @@ hr {
                              "frime       "
                              "more        "
                              "additionally";
+        gap: 100px;
     }
 }
 
