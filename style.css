@@ -58,7 +58,7 @@ hr {
         grid-template-columns: 1fr;
         grid-template-areas: "account     "
                              "options     "
-
+                             "frime       "
                              "more        "
                              "additionally";
     }
@@ -67,9 +67,10 @@ hr {
 .main {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr;
-    grid-template-areas: "account"
-                         "options"
-                         "more";
+    grid-template-areas: "account        "
+                         "options        "
+                         "frime          "
+                         "more           ";
     gap: 2ch;
     padding: 2ch;
 }
