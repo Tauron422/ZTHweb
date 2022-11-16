@@ -67,9 +67,9 @@ hr {
 .main {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1.5fr;
-    grid-template-areas: "account      content1 content2"
-                         "options      content1 content2"
-                         "more         content3 content3";
+    grid-template-areas: "account"
+                         "options"
+                         "more";
     gap: 2ch;
     padding: 2ch;
 }
