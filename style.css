@@ -58,9 +58,7 @@ hr {
         grid-template-columns: 1fr;
         grid-template-areas: "account     "
                              "options     "
-                             "content1    "
-                             "content2    "
-                             "content3    "
+
                              "more        "
                              "additionally";
     }
